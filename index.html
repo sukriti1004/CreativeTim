@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CreativeTim</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  </head>
+  <body>
+    <div class="sidebar">
+    <h4>CREATIVE TIM</h4>
+    <hr>
+    <a href=""><i class="material-icons">dashboard</i>Dashboard</a>
+    <a href=""><i class="material-icons">person</i>User Profile</a>
+    <a href=""><i class="material-icons">content_paste</i>Table List</a>
+    <a href=""><i class="material-icons">assignment</i>Typography</a>
+    <a href=""><i class="material-icons">hdr_strong</i>Icons</a>
+    <a href=""><i class="material-icons">location_on</i>Maps</a>
+    <a href=""><i class="material-icons">notifications</i>Notifications</a>
+    <a href=""><i class="material-icons">help</i>RTL Support</a>
+    <a href=""><i class="material-icons">unarchive</i>Upgrade to PRO</a>
+ </div>
+
+
+    <nav>
+     <div class="nav-wrapper">
+       <a href="#!" class="brand-logo">Dashboard</a>
+       <ul class="right hide-on-med-and-down">
+         <li><input type="text" placeholder="Search.."></li>
+         <li><a href=""><i class="material-icons">search</i></a></li>
+         <li><a href=""><i class="material-icons">dashboard</i></a></li>
+         <li><a href=""><i class="material-icons">notifications</i></a></li>
+         <li><a href=""><i class="material-icons">person</i></a></li>
+       </ul>
+     </div>
+   </nav>
+
+  <div class="main">
+    <div class="card">
+      <div class="overlap-first">
+       <i class=" icon fa fa-clone fa-2x" aria-hidden="true"></i>
+      </div>
+      <div class="text">
+        <h4>Used Space</h4>
+        <h3>49/50 GB</h3>
+        <hr>
+        <i class="bottom-icon fa fa-exclamation-triangle" aria-hidden="true"></i> <h2>Get More Space</h2>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="overlap-second">
+         <i class=" icon fa fa-home fa-2x" aria-hidden="true"></i>
+      </div>
+      <div class="text">
+       <h4>Revenue</h4>
+       <h3>$34,245</h3>
+       <hr>
+       <i class="bottom-icon fa fa-calendar-o" aria-hidden="true"></i> <h2>Last 24 Hours</h2>
+     </div>
+      </div>
+
+    <div class="card">
+      <div class="overlap-third">
+       <i class="icon fa fa-exclamation-circle fa-2x" aria-hidden="true"></i>
+      </div>
+      <div class="text">
+      <h4>Fixed Issues</h4>
+      <h3>75</h3>
+      <hr>
+        <i class="bottom-icon fa fa-tag" aria-hidden="true"></i> <h2>Tracked from github</h2>
+        </div>
+      </div>
+
+    <div class="card">
+      <div class="overlap-fourth">
+        <i class=" icon fa fa-twitter fa-2x" aria-hidden="true"></i>
+      </div>
+      <div class="text">
+       <h4>Followers</h4>
+       <h3>245+</h3>
+       <hr>
+       <i class="bottom-icon fa fa-clock-o" aria-hidden="true"></i><h2>Just updated</h2>
+    </div>
+      </div>
+  </div>
+
+<div class="grapharea">
+  <div class="card">
+   <div class="graph">
+     <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+     </div>
+     <div class="textarea">
+     <h4>Daily Sales</h4>
+     <h5>55% increase in today's sale</h5>
+     <hr>
+     <i class="bottom-icon fa fa-clock-o" aria-hidden="true"></i><h6>updated 4mins ago</h6>
+        </div>
+  </div>
+
+  <div class="card">
+    <div class="graph">
+      <div id="chartcontainer1" style="height: 300px; width: 100%;"></div>
+    </div>
+    <div class="textarea">
+    <h4>Email Subscriptions</h4>
+    <h5>Last Campaign Performance</h5>
+    <hr>
+    <i class="bottom-icon fa fa-clock-o" aria-hidden="true"></i><h6>Campaign sent 2 days ago</h6>
+       </div>
+  </div>
+
+  <div class="card">
+    <div class="graph">
+     <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+    </div>
+    <div class="textarea">
+    <h4>Completed task</h4>
+    <h5>Last Campaign Performance</h5>
+    <hr>
+    <i class="bottom-icon fa fa-clock-o" aria-hidden="true"></i><h6>updated 4mins ago</h6>
+       </div>
+  </div>
+</div>
+
+<script>
+
+window.onload = function () {
+var chart = new CanvasJS.Chart("chartContainer", {
+backgroundColor: "green",
+width:250,
+height:210,
+margin:0,
+animationEnabled: true,
+axisX:{
+labelFontColor:"white",
+gridColor:"white",
+lineThickness:0.2,
+gridDashType: "dot",
+gridThickness: 0.5,
+lineColor:"white"
+},
+
+axisY:{
+ labelFontColor:"white",
+ gridColor:"white" ,
+ lineThickness:0.2,
+ gridDashType: "dot",
+ gridThickness: 0.5,
+ lineColor:"white",
+includeZero: false
+},
+data: [{
+type: "line",
+   lineColor:"white",
+   markerColor : "white",
+   indexLabelFontSize: 16,
+dataPoints: [
+ {label:"Mon" , y: 5 },
+ { label:"Tues" ,y: 10},
+ {label:"Wed" , y: 0.5},
+ { label:"Thurs" ,y: 13 },
+ { label:"Fri" ,y: 15 },
+ {label:"Sat" , y: 9 },
+ {label:"Sun" , y: 35 },
+
+]
+}]
+});
+chart.render();
+
+<!-- -->
+var chart = new CanvasJS.Chart("chartcontainer1", {
+	animationEnabled: true,
+	backgroundColor: "#ff9900",
+    width:250,
+    height:210,
+    margin:0,
+	dataPointMaxWidth: 10,
+	axisY: {
+		labelFontColor: "white",
+      lineColor: "white",
+      lineThickness:0.2,
+       gridDashType: "dot",
+  	   gridThickness: 0.5,
+      gridColor:"white",
+	},
+  axisX:{
+   labelFontColor: "white",
+    lineColor: "white",
+    lineThickness:0.2,
+    gridDashType: "dot",
+    gridThickness: 0.5,
+    gridColor:"white",
+ },
+	data: [{
+		type: "column",
+		color: "white",
+
+		dataPoints: [
+			{ y: 480, label: "J" },
+			{ y: 320,  label: "F" },
+			{ y: 200,  label: "M" },
+			{ y: 580,  label: "A" },
+			{ y: 300,  label: "M" },
+			{ y: 420, label: "J" },
+			{ y: 720,  label: "J" },
+            { y: 200,  label: "A" },
+            { y: 150,  label: "S" },
+            { y: 340,  label: "O" },
+            { y: 620,  label: "N" },
+			{ y: 410,  label: "D" }
+		]
+	}]
+});
+chart.render();
+<!-- -->
+var chart = new CanvasJS.Chart("chartContainer2", {
+	animationEnabled: true,
+	backgroundColor: "#ff3333",
+    width:250,
+    height:210,
+    margin:0,
+	axisX:{
+   labelFontColor:"white",
+   gridColor:"white",
+   lineThickness:0.2,
+   gridDashType: "dot",
+   gridThickness: 0.5,
+   lineColor:"white"
+  },
+	axisY:{
+      labelFontColor:"white",
+      gridColor:"white" ,
+      lineThickness:0.2,
+      gridDashType: "dot",
+      gridThickness: 0.5,
+      lineColor:"white",
+	  includeZero: false
+	},
+	data: [{
+		type: "line",
+        lineColor:"white",
+        markerColor : "white",
+      	indexLabelFontSize: 16,
+		dataPoints: [
+			{label:"12p" , y: 100 },
+			{label:"3p" , y: 700},
+			{label:"6p" , y: 320,},
+			{label:"9p" , y: 180 },
+            {label:"12p", y: 160 },
+			{label:"3a" , y: 150 },
+			{label:"6a" , y: 120 },
+			{label:"9a" , y: 80 }
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+
+<div class="lastarea">
+<div class="row">
+  <div class="column">
+   <div class="topsection">
+    <span class="individual">  <h4>TASKS :</h4> </span>
+    <span class="individual">  <i class=" fa fa-bug" aria-hidden="true"></i><h4>BUGS</h4> </span>
+  <span class="individual">  <i class="fa fa-chevron-left" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i><h4>WEBSITE</h4></span>
+    <span class="individual">  <i class=" fa fa-cloud" aria-hidden="true"></i><h4>SERVER</h4></span>
+     </div>
+ <hr>
+   <div class="check_box">
+     <form action="#">
+      <p></p>
+      <label>
+        <input type="checkbox" class="filled-in" checked="checked" />
+        <span>Sign contract for "What are conference organizers afraid of?"</span><i class="material-icons">edit</i><i class="material-icons material-icons_1">clear</i>
+      </label>
+
+      </p>
+    <hr>
+    <p>
+   <label>
+     <input type="checkbox" class="filled-in" checked="checked" />
+     <span>Lines from great literature? Or email from my boss</span> <i class="material-icons">edit</i><i class="material-icons material-icons_1">clear</i>
+   </label>
+ </p>
+ <hr>
+ <p>
+<label>
+  <input type="checkbox" class="filled-in" checked="checked" />
+  <span>Flooded:One year later what was found and what was lost</span> <i class="material-icons">edit</i><i class="material-icons material-icons_1">clear</i>
+</label>
+</p>
+<hr>
+<p>
+<label>
+ <input type="checkbox" class="filled-in" checked="checked" />
+ <span>Create 4 invisible User experiences you never knew about</span> <i class="material-icons">edit</i><i class="material-icons material-icons_1">clear</i>
+</label>
+</p>
+         </form>
+   </div>
+
+  </div>
+  <div class="column">
+     <div class="yellow-area">
+       <h5>EMPLOYEE STATS</h5>
+       <h6>New employees on 15th September 2016</h6>
+     </div>
+     <div class="responsive-table">
+       <table>
+        <thead>
+          <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Salary</th>
+              <th>Country</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Dakota Rice</td>
+            <td>$36,738</td>
+            <td>Nigeria</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Minerva Hooper</td>
+            <td>$27,389</td>
+            <td>Curacao</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Sage Rodriguez</td>
+            <td>$56,142</td>
+            <td>Netherlands</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Philip Chaney</td>
+            <td>$38,735</td>
+            <td>Korea</td>
+          </tr>
+        </tbody>
+      </table>
+
+     </div>
+  </div>
+</div>
+</div>
+
+
+<footer>
+  <h5 style="float:right">© 2020 Made with ❤ by Creative Tim for better web</h5>
+  <ul>
+ <li>Creative Tim</li>
+ <li>About us</li>
+ <li>Blogs</li>
+  <li>Licenses</li>
+</ul>
+</footer>
+
+   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <!--JavaScript at end of body for optimized loading -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+  </body>
+</html>
